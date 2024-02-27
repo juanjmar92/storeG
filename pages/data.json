@@ -1,0 +1,47 @@
+[
+    {
+        "titulo": "Pixel 8 Pro",
+        "precio": 999,
+        "img": "8pro.jpg"
+    },
+    {
+        "titulo": "Pixel 8",
+        "precio": 790,
+        "img": "8.jpg"
+    },
+    {
+        "titulo": "Pixel 7a",
+        "precio": 550,
+        "img": "7a.jpg"
+    },
+    {
+        "titulo": "Pixel Watch",
+        "precio": 250,
+        "img": "watch1.jpg"
+    },
+    {
+        "titulo": "Pixel Watch 2",
+        "precio": 320,
+        "img": "watch2.jpg"
+    },
+    {
+        "titulo": "Pixel Tablet",
+        "precio": 500,
+        "img": "tablet.jpg"
+    },
+    {
+        "titulo": "Pixel Buds Pro",
+        "precio": 200,
+        "img": "producto7.png"
+    },
+    {
+        "titulo": "Pixel Buds A-Series",
+        "precio": 99,
+        "img": "producto8.png"
+    },
+    {
+        "titulo": "Chromecast",
+        "precio": 80,
+        "img": "producto9.png"
+    }
+]

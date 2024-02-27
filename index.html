@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>G Store</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <div class="text-decoration-none me-lg-5 pe-lg-5">
+                    <ul class="list-unstyled fw-bold pt-3">
+                        <li><a class="botonRosa" href="#">   Productos   </a></li>
+                    </ul>
+                </div>
+                <a class="navbar-brand" href="./index.html"><img src="./img/navlogo.png" alt="G-store Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fs-6"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                    <ul class="navbar-nav fw-bold align-items-center navbarBoton">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Conocenos</a>
+                        </li>
+                        <li class="nav-item submenu posicionRelativa">
+                            <a class="nav-link" href="#"><img src="./img/navCompra.png" alt="carritodecompras" class="imgCarrito"></a>
+                            <span id="contadorCarrito">0</span>
+                            <div id="carrito">
+                                <button class="closeButton">X</button>
+                                <table id="listaCarrito" class="botonGris">
+                                    <thead>
+                                        <tr>
+                                            <th> Imagen </th>
+                                            <th> Nombre </th>
+                                            <th> Precio </th>
+                                            <th> Cantidad </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                                <p id="totalCarrito">Total: $ 0.00</p>
+                                <div class = "botonesCarritos">
+                                    <a href="#" class="irComprar">Finalizar Compra</a>
+                                    <a href="#" id="vaciarCarrito" class="botonVaciar">Vaciar Carrito</a>
+                                </div>
+                            </div>
+
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="almacen">
+            <section class="almacenTitulo">
+                <h1>Bienvenidos A G-STORE</h1>
+                <p>¿Te gusta la Tecnologia? A Nosotros también. Buscá acá los mejores artículos para mentenerte conectado o para entretenerte! ¡No te pierdas!.</p>
+            </section> 
+
+            <section id="listaProductos" class="almacenProductos">
+            </section>
+        </div>
+
+
+        <section class="formulario" id="formularioCompra">
+            <div class="py-5 text-center">
+                <h2>Finalizar Compra</h2>
+                <p class="lead">Por favor completar los siguientes datos</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last">
+                    <h4 class="mb-3">Comentarios acerca del producto</h4>
+                    <small class="text-muted">Si tiene algun comentario adicional para tomar en cuenta sobre el producto puede dejarlo por acá, gracias!</small>
+                    <textarea name=""class="form-control" id="" cols="30" rows="10" placeholder="" ></textarea>
+                </div>
+            
+
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Dirección de facturación</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="firstName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control inputObligatorio" id="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Nombre es obligatorio
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Apellido</label>
+                                <input type="text" class="form-control inputObligatorio" id="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Apellido es obligatorio.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control inputObligatorio" id="email" placeholder="you@mail.com" value="" required >
+                                <div class="invalid-feedback">
+                                    Por favor ingrese email valido
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" name="phone" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="form-control inputObligatorio" id="phone" placeholder="+54 xxxxxxxxxx" title="Ingrese número valido" required >
+                                <div class="invalid-feedback">
+                                    Por favor ingrese número de teléfono
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Dirección<span class="text-muted"> (de entrega)</span></label>
+                                <input type="text" class="form-control inputObligatorio" id="address" placeholder="Calle 1234 Ciudad" value=""  required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese dirección de entrega
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control inputObligatorio" id="zip" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Código postal es obligatorio
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Método de pago</h4>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="efectivo" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                                <label class="form-check-label" for="credit">Efectivo</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="transferencia" name="paymentMethod" type="radio" class="form-check-input" required>
+                                <label class="form-check-label" for="debit">Transferencia</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="mercadopago" name="paymentMethod" type="radio" class="form-check-input" required>
+                                <label class="form-check-label" for="paypal">Mercadopago</label>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg botonProductoCompra" type="submit">Enviar</button>
+                        <button class="botonProductoCarrito" type="reset" >Limpiar formulario</button>
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+    <footer>
+        <section class="footerLogos">
+            <div class="footerLogosRedes">
+                <a href="https://www.instagram.com/unapatilla/" target="_blank"><img src="./img/instagram.png" alt="instagram"></a>
+                <a href="mailto:unapatilla@gmail.com" target="_blank"><img src="./img/gmail.png" alt="email"><a>
+                <a href="https://wa.me/" target="_blank"><img src="./img/whatsapp.png" alt="whatsaap"></a>
+            </div>
+            <div class="footerLogosContactanos">
+                <img src="./img/questions.png" alt="contactanos">
+                <a href="">Contactanos</a>
+            </div>
+        </section>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./pages/app.js"></script>
+    
+    
+</body>
+</html>
